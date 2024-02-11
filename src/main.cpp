@@ -1,20 +1,24 @@
 #include <Arduino.h>
 
+
+int step_pin_1 = 2;
+int step_pin_2 = 3;
+int step_pin_3 = 4;
+int step_pin_4 = 5;
+
+bool step_pin_val[4];
+
+
+
+
 // put function declarations here:
-int myFunction(int, int);
+void step() {};
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 }
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
-
-// test
