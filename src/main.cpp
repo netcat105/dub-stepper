@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-int step_pin[4] = {2, 3, 4, 5};
-bool step_pin_val[4] = {0, 0, 0, 0};
+int step_pin[4] = {2, 3, 4, 5};                 // array to set outputs pin
+bool step_pin_val[4] = {0, 0, 0, 0};            // array to set defaults output values
 
 // put function declarations here:
 void step() {}
