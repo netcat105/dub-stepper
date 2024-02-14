@@ -65,11 +65,11 @@ void setup()
 void loop()
 {
 MIDI.read(); //read MIDI messages
-  digitalWrite(enPin, disableSteppers); //choose whether to enable or disable steppers.
-  singleStep(1, stepPin_M1); //run each stepper at specified speed
-  singleStep(2, stepPin_M2);
-  singleStep(3, stepPin_M3);
-  singleStep(4, stepPin_M4);
+  //TODO digitalWrite(enPin, disableSteppers); //choose whether to enable or disable steppers.
+  singleStep(); //run each stepper at specified speed
+  //singleStep(2, stepPin_M2);
+  //singleStep(3, stepPin_M3);
+  //singleStep(4, stepPin_M4);
 
   if (millis() - WDT >= TIMEOUT)
   {
@@ -98,7 +98,7 @@ void handleNoteOff(byte channel, byte pitch, byte velocity) //MIDI Note OFF Comm
   motorSpeeds[channel] = 0; //set motor speed to zero
 }
 
-void singleStep(byte motorNum, byte stepPin)
+void singleStep(byte motorNum)
 {
   if ((micros() - prevStepMicros[motorNum] >= motorSpeeds[motorNum]) && (motorSpeeds[motorNum] != 0)) 
   { //step when correct time has passed and the motor is at a nonzero speed
